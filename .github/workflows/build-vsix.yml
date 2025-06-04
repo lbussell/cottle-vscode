@@ -1,0 +1,26 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+jobs:
+  build_vsix:
+    name: Build .vsix
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: npm install -g @vscode/vsce
+
+    - name: Build extension
+      run: vsce package --out vsix/cottle-vscode-$(git rev-parse --short HEAD).vsix
+
+    - name: Upload extension artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: cottle-vscode-extension
+        path: vsix/*.vsix

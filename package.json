@@ -3,6 +3,10 @@
   "displayName": "Cottle",
   "description": "Language support for Cottle (C# templating engine)",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lbussell/cottle-vscode"
+  },
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -30,5 +34,8 @@
         "path": "./syntaxes/cottle.tmLanguage.json"
       }
     ]
+  },
+  "scripts": {
+    "package": "vsce package --out vsix/cottle-vscode.vsix"
   }
 }
