@@ -17,14 +17,10 @@ jobs:
       run: npm install -g @vscode/vsce
 
     - name: Build extension
-      run: |
-        mkdir vsix
-        extension_file="vsix/cottle-vscode-$(git rev-parse --short HEAD).vsix"
-        echo "filename=$extension_file" >> $GITHUB_ENV
-        vsce package --out $extension_file
+      run: vsce package --out "cottle-vscode-$(git rev-parse --short HEAD).vsix"
 
     - name: Upload extension artifact
       uses: actions/upload-artifact@v4
       with:
         name: cottle-vscode-extension
-        path: $extension_file
+        path: "*.vsix"
