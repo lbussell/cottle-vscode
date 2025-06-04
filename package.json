@@ -1,0 +1,34 @@
+{
+  "name": "cottle",
+  "displayName": "Cottle",
+  "description": "Language support for Cottle (C# templating engine)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "cottle",
+        "aliases": [
+          "Cottle",
+          "cottle"
+        ],
+        "extensions": [
+          ""
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cottle",
+        "scopeName": "source.cottle",
+        "path": "./syntaxes/cottle.tmLanguage.json"
+      }
+    ]
+  }
+}
