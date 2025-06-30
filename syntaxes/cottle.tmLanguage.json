@@ -138,7 +138,7 @@
 		},
 		"built-in-functions": {
 			"name": "support.function.builtin.cottle",
-			"match": "\\b(join|slice|split|find|cat|ARGS|VARIABLES|PRODUCT_VERSION|OS_VERSION|ARCH_SHORT|DOTNET_VERSION|ASPNET_VERSION)\\b"
+			"match": "\\b(and|cmp|default|defined|eq|ge|gt|has|le|lt|ne|not|or|xor|when|abs|add|ceil|cos|div|floor|max|min|mod|mul|pow|rand|round|sin|sub|cat|cross|except|find|filter|flip|join|len|map|range|slice|sort|union|zip|char|format|lcase|match|ord|split|token|ucase|cast|type|call)\\b"
 		},
 		"operators": {
 			"patterns": [
