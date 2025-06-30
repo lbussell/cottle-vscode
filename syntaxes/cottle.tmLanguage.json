@@ -128,7 +128,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cottle",
-					"match": "\\b(echo|wrap|unwrap|if|elif|else|for|empty|set|while|dump|declare|return|to|in|as|when)\\b"
+					"match": "\\b(echo|wrap|unwrap|if|elif|else|for|empty|set|while|dump|declare|return|in|as|when)\\b"
 				},
 				{
 					"name": "keyword.operator.logical.cottle",
@@ -138,7 +138,7 @@
 		},
 		"built-in-functions": {
 			"name": "support.function.builtin.cottle",
-			"match": "\\b(cmp|default|defined|eq|ge|gt|has|le|lt|ne|xor|abs|add|ceil|cos|div|floor|max|min|mod|mul|pow|rand|round|sin|sub|cat|cross|except|find|filter|flip|join|len|map|range|slice|sort|union|zip|char|format|lcase|match|ord|split|token|ucase|cast|type|call|VARIABLES|ARGS|InsertTemplate|replace)\\b"
+			"match": "\\b(cmp|default|defined|eq|ge|gt|has|le|lt|ne|xor|abs|add|ceil|cos|div|floor|max|min|mod|mul|pow|rand|round|sin|sub|cat|cross|except|find|filter|flip|join|len|map|range|slice|sort|union|zip|char|format|lcase|match|ord|split|token|ucase|cast|type|call|InsertTemplate|replace)\\b"
 		},
 		"operators": {
 			"patterns": [
@@ -153,13 +153,17 @@
 				{
 					"name": "keyword.operator.arithmetic.cottle",
 					"match": "(\\+|\\-|\\*|\\/|%)"
+				},
+				{
+					"name": "keyword.assignment.cottle",
+					"match": "(to)"
 				}
 			]
 		},
 		"variables": {
 			"patterns": [
 				{
-					"name": "variable.other.global.cottle",
+					"name": "support.variable.global.cottle",
 					"match": "\\b[A-Z_][A-Z0-9_]*\\b"
 				},
 				{
