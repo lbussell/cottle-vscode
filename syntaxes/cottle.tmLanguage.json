@@ -33,6 +33,9 @@
 					"include": "#comments"
 				},
 				{
+					"include": "#conditional-statements"
+				},
+				{
 					"include": "#keywords"
 				},
 				{
@@ -55,25 +58,58 @@
 				},
 				{
 					"include": "#line-continuation"
-				},
-				{
-					"include": "#nested-template-block"
 				}
 			]
 		},
-		"nested-template-block": {
-			"name": "meta.template-block.nested.cottle",
-			"begin": "\\{\\{",
-			"end": "\\}\\}",
-			"beginCaptures": {
-				"0": { "name": "punctuation.definition.template.begin.cottle" }
-			},
-			"endCaptures": {
-				"0": { "name": "punctuation.definition.template.end.cottle" }
-			},
+		"conditional-statements": {
 			"patterns": [
 				{
-					"include": "#template-content"
+					"name": "meta.conditional.cottle",
+					"begin": "\\b(if|elif|else)\\b",
+					"end": "\\^|(?=\\}\\})",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.conditional.cottle" }
+					},
+					"patterns": [
+						{
+							"name": "meta.conditional.condition.cottle",
+							"begin": "\\G",
+							"end": ":",
+							"endCaptures": {
+								"0": { "name": "punctuation.separator.conditional.cottle" }
+							},
+							"patterns": [
+								{
+									"include": "#built-in-functions"
+								},
+								{
+									"include": "#operators"
+								},
+								{
+									"include": "#variables"
+								},
+								{
+									"include": "#strings"
+								},
+								{
+									"include": "#numbers"
+								},
+								{
+									"include": "#arrays"
+								}
+							]
+						},
+						{
+							"name": "text.literal.cottle",
+							"begin": "(?<=:)",
+							"end": "(?=\\^|\\}\\})",
+							"patterns": [
+								{
+									"include": "#template-block"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -92,7 +128,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cottle",
-					"match": "\\b(if|else|when|set|to|InsertTemplate)\\b"
+					"match": "\\b(when|set|to|InsertTemplate)\\b"
 				},
 				{
 					"name": "keyword.operator.logical.cottle",
